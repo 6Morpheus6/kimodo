@@ -170,7 +170,7 @@ class LLM2Vec(nn.Module):
         return cls(model=model, tokenizer=tokenizer, **config)
 
     def prepare_for_tokenization(self, text):
-        if self.model.config._name_or_path == "meta-llama/Meta-Llama-3-8B-Instruct":
+        if self.model.config._name_or_path == "NousResearch/Meta-Llama-3-8B-Instruct":
             text = "<|start_header_id|>user<|end_header_id|>\n\n" + text.strip() + "<|eot_id|>"
             return text
         if self.model.config._name_or_path in [
@@ -188,7 +188,7 @@ class LLM2Vec(nn.Module):
         ]:
             text = "<|im_start|>user\n" + text.strip() + "<|im_end|>"
         if self.pooling_mode == "eos_token":
-            if self.model.config._name_or_path == "meta-llama/Meta-Llama-3-8B":
+            if self.model.config._name_or_path == "NousResearch/Meta-Llama-3-8B-Instruct":
                 text = text.strip() + "<|end_of_text|>"
             elif isinstance(self.model.config, LlamaConfig) or isinstance(self.model.config, MistralConfig):
                 text = text.strip() + " </s>"
