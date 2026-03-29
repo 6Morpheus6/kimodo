@@ -21,8 +21,8 @@ TEXT_ENCODER_PRESETS = {
     "llm2vec": {
         "target": "kimodo.model.LLM2VecEncoder",
         "kwargs": {
-            "base_model_name_or_path": "McGill-NLP/LLM2Vec-Meta-Llama-3-8B-Instruct-mntp",
-            "peft_model_name_or_path": "McGill-NLP/LLM2Vec-Meta-Llama-3-8B-Instruct-mntp-supervised",
+            "base_model_name_or_path": "6Morpheus6/LLM2Vec-Meta-Llama-3-8B-Instruct-mntp",
+            "peft_model_name_or_path": "6Morpheus6/LLM2Vec-Meta-Llama-3-8B-Instruct-mntp-supervised",
             "dtype": "bfloat16",
             "llm_dim": 4096,
         },
@@ -155,7 +155,11 @@ def main():
         )
         clear.click(fn=clear_fn, inputs=None, outputs=outputs)
 
-    demo.launch(server_name=server_name, server_port=server_port)
+    demo.launch(
+    server_name=server_name, 
+    server_port=server_port, 
+    allowed_paths=[args.tmp_folder]
+)
 
 
 if __name__ == "__main__":
