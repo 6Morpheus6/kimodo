@@ -678,23 +678,23 @@ def create_gui(
             visible=not HF_MODE,
         ):
             with client.gui.add_folder("Motion", expand_by_default=False):
-                gui_save_motion_path_text = client.gui.add_text("Save Path", initial_value="output.npz")
+                gui_save_motion_path_text = client.gui.add_text("Save Path", initial_value="motions/motion.npz")
                 gui_save_motion_button = client.gui.add_button(
                     "Save Motion",
                     hint="Save the current motion",
                 )
-                gui_load_motion_path_text = client.gui.add_text("Load Path", initial_value="output.npz")
+                gui_load_motion_path_text = client.gui.add_text("Load Path", initial_value="motions/motion.npz")
                 gui_load_motion_button = client.gui.add_button(
                     "Load Motion",
                     hint="Load the selected motion",
                 )
             with client.gui.add_folder("Constraints", expand_by_default=False):
                 gui_save_constraints_path_text = client.gui.add_text(
-                    "Save Path", initial_value="output_constraints.json"
+                    "Save Path", initial_value="constraints/constraint.json"
                 )
                 gui_save_constraints_button = client.gui.add_button("Save Constraints")
                 gui_load_constraints_path_text = client.gui.add_text(
-                    "Load Path", initial_value="output_constraints.json"
+                    "Load Path", initial_value="constraints/constraint.json"
                 )
                 gui_load_constraints_button = client.gui.add_button("Load Constraints")
             with client.gui.add_folder("Example", expand_by_default=False):
