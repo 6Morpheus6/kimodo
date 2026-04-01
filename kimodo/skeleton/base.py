@@ -6,6 +6,7 @@ from pathlib import Path
 from typing import Optional
 
 import torch
+import warnings
 
 from kimodo.assets import skeleton_asset_path
 
@@ -16,6 +17,7 @@ from .transforms import (
     to_standard_tpose,
 )
 
+warnings.filterwarnings("ignore", category=UserWarning)
 
 class SkeletonBase(torch.nn.Module):
     """Base class that stores a skeleton hierarchy and helper metadata.
