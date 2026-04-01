@@ -6,9 +6,11 @@ import os
 
 import numpy as np
 import torch
+import warnings
 
 from .llm2vec import LLM2Vec
 
+warnings.filterwarnings("ignore", category=UserWarning)
 
 class LLM2VecEncoder:
     """LLM2Vec text embeddings."""
