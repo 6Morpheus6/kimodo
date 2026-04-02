@@ -686,7 +686,7 @@ def create_gui(
             visible=not HF_MODE,
         ):
             with client.gui.add_folder("Motion", expand_by_default=False):
-                gui_save_motion_path_text = client.gui.add_text("Save Path", initial_value="motions/motion")
+                gui_save_motion_path_text = client.gui.add_text("Save Path", initial_value="../motions/motion")
                 gui_save_motion_format_dropdown = client.gui.add_dropdown(
                     "Save Format",
                     options=(
@@ -704,7 +704,7 @@ def create_gui(
                 )
                 gui_load_motion_path_text = client.gui.add_text(
                     "Load Path",
-                    initial_value="motions/motion.npz",
+                    initial_value="../motions/motion.npz",
                     hint="SOMA .bvh, Kimodo or AMASS .npz, or G1 MuJoCo .csv",
                 )
                 gui_load_motion_button = client.gui.add_button(
@@ -713,11 +713,11 @@ def create_gui(
                 )
             with client.gui.add_folder("Constraints", expand_by_default=False):
                 gui_save_constraints_path_text = client.gui.add_text(
-                    "Save Path", initial_value="constraints/constraint.json"
+                    "Save Path", initial_value="../constraints/constraint.json"
                 )
                 gui_save_constraints_button = client.gui.add_button("Save Constraints")
                 gui_load_constraints_path_text = client.gui.add_text(
-                    "Load Path", initial_value="constraints/constraint.json"
+                    "Load Path", initial_value="../constraints/constraint.json"
                 )
                 gui_load_constraints_button = client.gui.add_button("Load Constraints")
             with client.gui.add_folder("Example", expand_by_default=False):
